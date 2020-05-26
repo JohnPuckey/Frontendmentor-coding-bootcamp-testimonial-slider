@@ -15,3 +15,109 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+.testimonials {
+  position: relative;
+  background-image: url(./images/pattern-bg.svg);
+  background-repeat: no-repeat;
+  background-position: center 25px;
+  height: 100vh;
+  min-height: 667px;
+  background-size: 325px;
+  font-size: 32px;
+  padding-top: 39px;
+}
+
+.slider-nav {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 12px;
+  border-radius: 40px;
+  width: 80px;
+  top: 290px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #fff;
+}
+
+.slider-nav button {
+  height: 17px;
+}
+
+.slider-nav button img {
+  height: 100%;
+}
+
+.slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 16px auto;
+  width: 100%;
+  max-width: 310px;
+}
+
+.slide img {
+  width: 100%;
+  max-width: 255px;
+  border-radius: 5px;
+  margin-bottom: 80px;
+  -webkit-box-shadow: 0px 25px 30px -10px hsla(240, 38%, 20%, 0.4);
+  -moz-box-shadow: 0px 25px 30px -10px hsla(240, 38%, 20%, 0.4);
+  box-shadow: 0px 25px 30px -10px hsla(240, 38%, 20%, 0.4);
+}
+
+.slide-content {
+  text-align: center;
+}
+
+.slide-content::before {
+  content: '';
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  background: url(./images/pattern-quotes.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  position: absolute;
+  transform: translateX(-50%) translateY(-30px);
+}
+
+.slide-content::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  height: 75px;
+  width: 100%;
+  background-image: url(./images/pattern-curve.svg);
+  background-position: bottom left;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.quote {
+  font-weight: 300;
+  line-height: 24px;
+  font-size: 18px;
+  color: var(--primary-dark-blue);
+}
+
+.name {
+  margin-top: 16px;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 22px;
+  color: var(--primary-dark-blue);
+}
+
+.role {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--primary-gray-blue);
+}
+
+
