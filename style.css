@@ -15,12 +15,16 @@ body {
   font-family: "Inter", sans-serif;
 }
 
+button:focus {
+  outline: none;
+}
+
 .testimonials {
   position: relative;
   background-image: url(./images/pattern-bg.svg);
   background-repeat: no-repeat;
   background-position: center 25px;
-  height: 100vh;
+  height: fit content;
   min-height: 667px;
   background-size: 325px;
   font-size: 32px;
@@ -32,30 +36,40 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 10px 12px;
+  padding: 10px 10px;
   border-radius: 40px;
   width: 80px;
   top: 290px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #fff;
+  z-index: 10;
 }
 
 .slider-nav button {
-  height: 17px;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  border: none;
+  background-color: transparent;
 }
 
-.slider-nav button img {
-  height: 100%;
-}
+.slider-nav button:hover .slider-btn, .slider-nav button:focus .slider-btn {
+  stroke: var(--primary-gray-blue);
+}   
 
 .slide {
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   margin: 16px auto;
   width: 100%;
   max-width: 310px;
+  z-index: -1;
+}
+
+.slide.active {
+  display: flex;
 }
 
 .slide img {
@@ -120,4 +134,14 @@ body {
   color: var(--primary-gray-blue);
 }
 
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: .7s;
+  animation-name: fade;
+  animation-duration: .7s;
+}
 
+@keyframes fade {
+  from {opacity: .4}
+  to {opacity: 1}
+}
