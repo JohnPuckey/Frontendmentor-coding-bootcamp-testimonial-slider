@@ -22,11 +22,27 @@ button:focus {
 
 .testimonials {
   position: relative;
+  min-height: 667px;
+  margin-bottom: 50px;
+}
+
+.testimonials::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  height: 75px;
+  width: 100%;
+  background-image: url(./images/pattern-curve.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.slider {
   background-image: url(./images/pattern-bg.svg);
   background-repeat: no-repeat;
   background-position: center 25px;
-  height: fit content;
-  min-height: 667px;
   background-size: 325px;
   padding-top: 39px;
 }
@@ -68,19 +84,6 @@ button:focus {
   z-index: 5;
 }
 
-.slider::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  z-index: -1;
-  height: 75px;
-  width: 100%;
-  background-image: url(./images/pattern-curve.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
 .slide.active {
   display: flex;
 }
@@ -112,8 +115,6 @@ button:focus {
   transform: translateX(-50%) translateY(-30px);
 }
 
-
-
 .quote {
   font-weight: 300;
   line-height: 24px;
@@ -121,19 +122,24 @@ button:focus {
   color: var(--primary-dark-blue);
 }
 
-.name {
-  margin-top: 16px;
-  font-weight: 700;
+.role, .name {
   font-size: 14px;
   line-height: 22px;
-  color: var(--primary-dark-blue);
+
 }
 
 .role {
   font-weight: 500;
-  font-size: 14px;
   color: var(--primary-gray-blue);
 }
+
+.name {
+  margin-top: 16px;
+  font-weight: 700;
+  color: var(--primary-dark-blue);
+}
+
+
 
 /* Slide fade in animation */
 
@@ -149,96 +155,158 @@ button:focus {
   to {opacity: 1}
 }
 
-@media only screen and (min-width: 1120px) {
+@media only screen and (min-width: 768px) {
 
   .testimonials {
-    padding: 0;
-    background-position: 90% center;
-    height: fit content;
-    height: 800px;
-    margin: 0 auto;
-    background-size: 700px;
+    min-height: 750px;
+  }
+
+  .testimonials::after {
+    height: 100px;
+  }
+
+  .slide img {
+    max-width: 310px;
   }
 
   .slider {
-    height: 100vh;
+    background-size: 390px;
+    padding-top: 44px;
+  }
+
+  .slider-nav {
+
+    top: 350px;
+  }
+
+  .slide {
+    max-width: 430px;
+  }
+
+  .quote {
+    line-height: 30px;
+    font-size: 24px;  }
+
+  .role, .name {
+    font-size: 18px;
+  }
+
+}
+
+
+@media only screen and (min-width: 1024px) {
+
+  .testimonials {
+    padding: 0;
+    height: 800px;
+  }
+
+  .slider {
+    background-position: 100% 44% ;
+    background-size: 650px;
+    width: 1024px;
+    min-height: 800px;
+    margin: 0 auto;
+    padding-top: 0;
+
+  }
+
+  .slide {
+    position: relative;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    max-width: 900px;
+    height: 800px;
+    margin: 0 auto;
+  }
+
+  .slide img {
+    width: 500px;
+    max-width: unset;
+    margin-bottom: 0;
+  }
+
+  .slide-content {
+    position: absolute;
+    left: 0;
+    text-align: left;
+    width: 478px;
+
+  }
+
+  .slide-content::before {
+    height: 80px;
+    width: 100px;
+    position: absolute;
+    transform: translateX(65px) translateY(-52px);
+  }
+
+  .testimonials::after {
+    height: 150px;
+
+  }
+
+  .slider-nav {
+    padding: 20px 20px;
+    border-radius: 40px;
+    width: 110px;
+    top: unset;
+    bottom: 118px;
+    left: 50%;
+    transform: translateX(40px);
+  }
+
+  .name, .role {
+    display: inline-block;
+  }
+
+  .role {
+    margin-left: 10px;
+  }
+
+}
+
+
+@media only screen and (min-width: 1300px) {
+
+  .slider {
+    background-position: 99% 34% ;
+    background-size: 700px;
+    width: 1300px;
     min-height: 800px;
   }
 
-.slide {
-  position: relative;
-  flex-direction: row-reverse;
-  align-items: center;
-  justify-content: flex-start;
-  width: 100%;
-  max-width: 1110px;
-  height: 800px;
-  margin: 0 auto;
-}
+  .slide {
+    width: 100%;
+    max-width: 1110px;
+  }
 
-.slide img {
-  width: 540px;
-  max-width: unset;
-  margin-bottom: 0;
-}
+  .slide img {
+    width: 540px;
+  }
 
-.slide-content {
-  position: absolute;
-  left: 0;
-  text-align: left;
-  width: 60%;
-  max-width: 635px;
+  .slide-content {
+    width: 632px;
+  }
 
-}
+  .slide-content::before {
+    height: 100px;
+    width: 120px;
+    transform: translateX(93px) translateY(-65px);
+  }
 
-.slide-content::before {
-  content: '';
-  position: absolute;
-  height: 100px;
-  width: 120px;
-  background: url(./images/pattern-quotes.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  position: absolute;
-  transform: translateX(93px) translateY(-65px);
-}
+  .slider-nav {
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(100px);
 
-.slider::after {
-  height: 150px;
+  }
 
-}
-
-.slider-nav {
-  position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 20px;
-  border-radius: 40px;
-  width: 110px;
-  top: unset;
-  bottom: 100px;
-  left: 50%;
-  transform: translateX(100px);
-  background-color: #fff;
-  z-index: 10;
-}
-
-.quote {
-  font-size: 32px;
-  line-height: 47px;
-}
-
-.name {
-  display: inline-block;
-  font-size: 18px;
-}
-
-.role {
-  display: inline-block;
-  font-size: 18px;
-  margin-left: 10px;
-}
+  .quote {
+    font-size: 32px;
+    line-height: 47px;
+  }
 
 }
