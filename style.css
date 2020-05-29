@@ -5,6 +5,8 @@
   --primary-gray-blue: hsl(240, 18%, 77%);
 }
 
+/* Universal Styles */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -20,11 +22,15 @@ button:focus {
   outline: none;
 }
 
+/* Testimonials section */
+
 .testimonials {
   position: relative;
   min-height: 667px;
   margin-bottom: 50px;
 }
+
+/* curve background element */
 
 .testimonials::after {
   content: '';
@@ -39,6 +45,8 @@ button:focus {
   background-repeat: no-repeat;
 }
 
+/* slider positioning and background elements */
+
 .slider {
   background-image: url(./images/pattern-bg.svg);
   background-repeat: no-repeat;
@@ -46,6 +54,22 @@ button:focus {
   background-size: 325px;
   padding-top: 39px;
 }
+
+.slider::before {
+  content: '';
+  position: absolute;
+  bottom: 250px;
+  left: 50%;
+  height: 60px;
+  width: 60px;
+  background: url(./images/pattern-quotes.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transform: translateX(-50%);
+}
+
+/* Slider Nav Controls */
 
 .slider-nav {
   position: absolute;
@@ -73,6 +97,8 @@ button:focus {
 .slider-nav button:hover .slider-btn, .slider-nav button:focus .slider-btn {
   stroke: var(--primary-gray-blue);
 }   
+
+/* Slide Styles */
 
 .slide {
   display: none;
@@ -102,18 +128,7 @@ button:focus {
   text-align: center;
 }
 
-.slide-content::before {
-  content: '';
-  position: absolute;
-  height: 60px;
-  width: 60px;
-  background: url(./images/pattern-quotes.svg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center center;
-  position: absolute;
-  transform: translateX(-50%) translateY(-30px);
-}
+/* Typography */
 
 .quote {
   font-weight: 300;
@@ -139,8 +154,6 @@ button:focus {
   color: var(--primary-dark-blue);
 }
 
-
-
 /* Slide fade in animation */
 
 .fade {
@@ -154,6 +167,8 @@ button:focus {
   from {opacity: .4}
   to {opacity: 1}
 }
+
+/* Small Screens / Tablets */
 
 @media only screen and (min-width: 768px) {
 
@@ -174,6 +189,10 @@ button:focus {
     padding-top: 44px;
   }
 
+  .slider::before {
+    bottom: 268px;
+  }
+
   .slider-nav {
 
     top: 350px;
@@ -181,6 +200,7 @@ button:focus {
 
   .slide {
     max-width: 430px;
+    margin: 16px auto;
   }
 
   .quote {
@@ -193,6 +213,7 @@ button:focus {
 
 }
 
+/* Desktops / Laptops */
 
 @media only screen and (min-width: 1024px) {
 
@@ -201,14 +222,27 @@ button:focus {
     height: 800px;
   }
 
+  .testimonials::after {
+    height: 150px;
+  }
+
   .slider {
-    background-position: 100% 44% ;
-    background-size: 650px;
+    position: relative;
+    background-position: 100% 21% ;
+    background-size: 640px;
     width: 1024px;
     min-height: 800px;
     margin: 0 auto;
     padding-top: 0;
+  }
 
+  .slider::before {
+    position: absolute;
+    height: 80px;
+    width: 100px;
+    left: 182px;
+    bottom: unset;
+    top: 188px;
   }
 
   .slide {
@@ -220,6 +254,7 @@ button:focus {
     max-width: 900px;
     height: 800px;
     margin: 0 auto;
+    padding-bottom: 100px;
   }
 
   .slide img {
@@ -233,29 +268,20 @@ button:focus {
     left: 0;
     text-align: left;
     width: 478px;
-
-  }
-
-  .slide-content::before {
-    height: 80px;
-    width: 100px;
-    position: absolute;
-    transform: translateX(65px) translateY(-52px);
-  }
-
-  .testimonials::after {
-    height: 150px;
-
   }
 
   .slider-nav {
-    padding: 20px 20px;
+    padding: 18px 18px;
     border-radius: 40px;
     width: 110px;
     top: unset;
-    bottom: 118px;
+    bottom: 172px;
     left: 50%;
     transform: translateX(40px);
+  }
+
+  .quote {
+    margin-bottom: 24px;
   }
 
   .name, .role {
@@ -268,19 +294,28 @@ button:focus {
 
 }
 
+/* Large Screens */
 
 @media only screen and (min-width: 1300px) {
 
   .slider {
-    background-position: 99% 34% ;
+    background-position: 99% 35% ;
     background-size: 700px;
     width: 1300px;
     min-height: 800px;
   }
 
+  .slider::before {
+    height: 100px;
+    width: 120px;
+    left: 252px;
+    top: 216px;
+  }
+
   .slide {
     width: 100%;
     max-width: 1110px;
+    padding-bottom: 34px;
   }
 
   .slide img {
@@ -291,22 +326,20 @@ button:focus {
     width: 632px;
   }
 
-  .slide-content::before {
-    height: 100px;
-    width: 120px;
-    transform: translateX(93px) translateY(-65px);
-  }
-
   .slider-nav {
-    bottom: 100px;
+    bottom: 120px;
     left: 50%;
-    transform: translateX(100px);
-
+    transform: translateX(76px);
   }
 
   .quote {
     font-size: 32px;
-    line-height: 47px;
+    line-height: 44px;
+    padding-top: 73px;
+  }
+
+  .name, .role {
+    font-size: 20px;
   }
 
 }
