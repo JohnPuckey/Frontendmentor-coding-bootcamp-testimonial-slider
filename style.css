@@ -22,12 +22,11 @@ button:focus {
   outline: none;
 }
 
+
 /* Testimonials section */
 
 .testimonials {
   position: relative;
-  min-height: 667px;
-  margin-bottom: 50px;
 }
 
 /* curve background element */
@@ -52,6 +51,7 @@ button:focus {
   background-repeat: no-repeat;
   background-position: center 25px;
   background-size: 325px;
+  min-height: 667px;
   padding-top: 39px;
 }
 
@@ -84,6 +84,9 @@ button:focus {
   transform: translateX(-50%);
   background-color: #fff;
   z-index: 10;
+  -webkit-box-shadow: 0px 15px 25px -8px hsla(240, 38%, 20%, 0.2);
+  -moz-box-shadow: 0px 15px 25px -8px hsla(240, 38%, 20%, 0.2);
+  box-shadow: 0px 15px 25px -8px hsla(240, 38%, 20%, 0.2);
 }
 
 .slider-nav button {
@@ -168,13 +171,11 @@ button:focus {
   to {opacity: 1}
 }
 
+/* *** MEDIA QUERIES *** */
+
 /* Small Screens / Tablets */
 
 @media only screen and (min-width: 768px) {
-
-  .testimonials {
-    min-height: 750px;
-  }
 
   .testimonials::after {
     height: 100px;
@@ -187,6 +188,7 @@ button:focus {
   .slider {
     background-size: 390px;
     padding-top: 44px;
+    min-height: 750px;
   }
 
   .slider::before {
@@ -219,7 +221,6 @@ button:focus {
 
   .testimonials {
     padding: 0;
-    height: 800px;
   }
 
   .testimonials::after {
@@ -240,9 +241,10 @@ button:focus {
     position: absolute;
     height: 80px;
     width: 100px;
-    left: 182px;
+    left: 132px;
     bottom: unset;
-    top: 188px;
+    top: 190px;
+    transform: unset;
   }
 
   .slide {
@@ -308,8 +310,8 @@ button:focus {
   .slider::before {
     height: 100px;
     width: 120px;
-    left: 252px;
-    top: 216px;
+    left: 190px;
+    top: 218px;
   }
 
   .slide {

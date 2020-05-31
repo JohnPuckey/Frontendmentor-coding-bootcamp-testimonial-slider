@@ -15,7 +15,7 @@ nextBtn.addEventListener("click", () => {
         slideIndex = 1
     // else go to next slide
     } else {
-        slideIndex ++
+        slideIndex ++ ;
     }
     showSlides(slideIndex)
 })
@@ -28,7 +28,7 @@ prevBtn.addEventListener("click", () => {
         slideIndex = slides.length
     // else go to previous slide 
     } else {
-        slideIndex --
+        slideIndex -- ;
     }
     showSlides()
 })
@@ -40,7 +40,7 @@ function showSlides() {
 }
 
 
-// Clears current active states from slides
+// Clears current active state from slide
 function clearSlides() {
     slides[slideIndex-1].classList.remove('active')
 }
